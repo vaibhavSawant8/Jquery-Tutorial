@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        
+$(document).ready(function(){
+  $("#abc").click(function(){
+    // $("#abh").slideDown("slow");
+    // $("#abh").slideUp("slow");
+    $("#abh").slideToggle("slow");
+  });
+});
+</script>
+<style> 
+#abh, #abc {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#abh {
+  padding: 50px;
+  /* display: none; */
+}
+</style>
+</head>
+
+<body>
+    <div id="abc">click slide down pannel</div>
+    <div id="abh">Hello Vaibhav</div>
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non corrupti numquam quod esse hic officia aut voluptatem architecto debitis sit, rerum amet odit maxime est earum? Ab, culpa rerum?</p> -->
+</body>
+</html>

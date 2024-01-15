@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#cbx").click(function(){
+        // $("#abx").click(function(){
+            // $("#abc").fadeIn(8000);
+            // $("#bc").fadeIn(3500);
+            // aactive display:none; in style
+            // $("#c").fadeIn(8000);
+            // $("#abc").fadeOut();
+            // $("#bc").fadeOut("slow");
+            // $("#c").fadeOut(2000);
+            // $("#abc").fadeToggle();
+            // $("#bc").fadeToggle("slow");
+            // $("#c").fadeToggle(2000);
+            $("#abc").fadeTo("slow",0.2);
+            $("#bc").fadeTo("slow",0.36);
+            $("#c").fadeTo("slow",0.12);
+        });
+    });
+</script>
+</head>
+<body>
+
+<p>Demonstrate fadeIn() with different parameters.</p>
+
+<!-- <button id="abx">Click to fadein boxes</button><br><br> -->
+<!-- <button id="cbx">Click to fadeout boxes</button><br><br> -->
+<button id="cbx">Click to fadeToggle boxes</button><br><br>
+
+<!-- <div id="abc" style="width: 280px; height: 140px; background-color: aqua; display: none;"></div><br>
+<div id="bc" style="width: 280px; height: 140px; background-color: rgb(19, 201, 10); display: none;"></div><br>
+<div id="c" style="width: 280px; height: 140px; background-color: rgb(225, 87, 18); display: none;"></div> -->
+<div id="abc" style="width: 280px; height: 140px; background-color: aqua; "></div><br>
+<div id="bc" style="width: 280px; height: 140px; background-color: rgb(19, 201, 10); "></div><br>
+<div id="c" style="width: 280px; height: 140px; background-color: rgb(225, 87, 18); "></div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:sans-serif;
+           
+        }
+        body
+        {
+            width:80%;
+            height: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid black; */
+            padding: 0px;
+            margin: 30px;
+            background-color: rgb(150, 136, 136);
+        }
+        .Calculator
+        {
+            /* border: 1px solid blue; */
+            padding: 2px;
+            /* border-radius: 14px; */
+            background: transparent;
+            /* box-shadow: 0px 3px 15px rgb(100, 100, 89); */
+        }
+        input
+        {
+            width: 300px;
+            border: none;
+            padding: 20px;
+            margin: 10px;
+            color: darkmagenta;
+            background: transparent;
+            /* box-shadow: 0px 3px 15px rgb(100, 100, 89); */
+            text-align: center;
+            cursor: pointer;
+            font-size: 40px;
+        }
+        input::placeholder
+        {
+            color: aqua;
+            padding-left: 230PX;
+            text-align: end;
+            float: left;
+
+        }
+        button
+        {
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            /* padding: 20px; */
+            margin: 10px;
+            color: darkmagenta;
+            background: transparent;
+            box-shadow: 0px 3px 15px rgb(100, 100, 89);
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px; 
+        }
+        .equalbtn{color: orange;}
+        .container
+        {
+            margin-left: 100px;
+            border: 1PX solid black;
+            border-radius: 30PX;
+            background-color: rgb(13, 214, 137);
+            color: chartreuse;
+        }
+        .BTNoperator
+        {
+            color: brown;
+        }
+        
+    </style>
+    
+</head>
+<body>
+   
+        
+    
+    <div class="container">
+        <input  type="text" id="inputbox" placeholder="0">
+        
+    
+        <div class="Calculator">
+          
+            <button class="BTNoperator">Ac</button>
+            <button class="BTNoperator">Del</button>
+            <button class="BTNoperator">%</button>
+            <button class="BTNoperator">/</button>
+            
+            
+        </div>
+
+        <div> 
+        <button class="numbers" onclick="insert(7)">7 </button>
+        <button class="numbers">8</button>
+        <button class="numbers">9</button>
+        <button class="BTNoperator">x</button>
+        </div>
+        
+        <div> 
+        <button class="numbers">4</button>
+        <button class="numbers">5</button>
+        <button class="numbers">6</button>
+        <button class="BTNoperator">-</button>
+        </div>
+    
+        <div> 
+        <button class="numbers">1</button>
+        <button class="numbers">2</button>
+        <button class="numbers">3</button>
+        <button class="BTNoperator">+</button>
+        </div>
+        
+        <div>
+            <button class="numbers">00</button>
+            <button class="numbers">0</button>
+            <button class="numbers">.</button>
+            <button class="equalbtn">=</button>
+        </div>
+
+       
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.cal-btn').on('click',function(){
+                $('.result').val($('.result').val()+$(this).html());
+            });
+            $('.equalbtn').on('click',function(){
+                exp=$('.result').val();
+                if(exp.includes('x'))
+                {
+                    exp=exp.replace('x','*')
+
+                }
+                $('.result').val(eval(exp));
+            });
+            $('.equalbtn').on('click',function(){
+                $('.result').val(eval( $('.result').val() ) );
+            });
+
+
+            $('.clear').on('click',function(){
+                $('.result').val('');
+            });
+
+            
+             $('.back').on('click', function(){
+        let vaibhav = $('.result').val();
+        $('.result').val(vaibhav.substring(0, vaibhav.length - 1));
+    });
+        });
+    </script>
+</body>
+</html>

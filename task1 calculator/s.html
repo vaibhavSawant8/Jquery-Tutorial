@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#weatherInfo {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="city" placeholder="Enter city name">
+        <button id="searchBtn">Search</button>
+        <div id="weatherInfo"></div>
+    </div>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $("#searchBtn").on("click", function() {
+        var city = $("#city").val();
+        var apiKey = "https://goweather.herokuapp.com/weather/sangli"; // Replace with your OpenWeatherMap API key
+        var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        $.ajax({
+            url:'https://goweather.herokuapp.com/weather/sangli',
+            method: "GET",
+            success: function(data) {
+                var weatherDescription = data.weather[0].description;
+                var temperature = data.main.temp;
+                var humidity = data.main.humidity;
+
+                var weatherInfo = `<p>Weather: ${weatherDescription}</p>`;
+                weatherInfo += `<p>Temperature: ${temperature}°C</p>`;
+                weatherInfo += `<p>Humidity: ${humidity}%</p>`;
+
+                $("#weatherInfo").html(weatherInfo);
+            },
+            error: function() {
+                $("#weatherInfo").html("City not found. Please try again.");
+            }
+        });
+    });
+});
+
+</script>
+</html>

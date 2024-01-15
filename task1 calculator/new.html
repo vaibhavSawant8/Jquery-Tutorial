@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <div id="weather"></div>
+
+    <script>
+        // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+        const apiKey = 'YOUR_API_KEY';
+        const city = 'New York'; // Replace with the desired city name
+
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+        // Make an API request using jQuery
+        $.get(apiUrl, function(data) {
+            // Process the API response and display weather information
+            const weatherDescription = data.weather[0].description;
+            const temperature = (data.main.temp - 273.15).toFixed(2); // Convert temperature from Kelvin to Celsius
+
+            const weatherInfo = `Weather: ${weatherDescription}<br>Temperature: ${temperature}°C`;
+
+            // Display weather information in the #weather div
+            $('#weather').html(weatherInfo);
+        });
+    </script>
+</body>
+</html>

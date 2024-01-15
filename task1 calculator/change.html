@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+       body
+       {
+        /* border: 3px solid black; */
+        /* width: 21.5%; */
+        width: 27.9%;
+        letter-spacing: 1.2px;
+        /* padding: 20.9px; */
+        padding: 45.9px;
+        margin: 30px;
+        margin-left: 520px;
+        margin-top: 120px;
+        border-radius: 20px;
+        background-color: rgb(250, 249, 249);
+        /* box-shadow: 0.9px 0.2px 0.9px black; */
+        
+   }
+   
+   .cal-body
+   {
+    background-color: rgb(7, 1, 14);
+    color: white;
+    border-radius: 8px;
+    /* padding: 2px; */
+    box-shadow: 5px 5px 10px #0c0b0b;
+    /* padding: 1px; */
+
+   }
+        button
+        {
+            width: 50px;
+            height: 50px;
+            outline: none;
+            box-shadow: none;
+            margin: 2px;
+            font-size: 16px;
+            font-weight: bold;
+            color: blue;
+            border-radius: 50%;
+            border: none;
+
+
+        }
+
+        .clear,.back{
+            /* background-color: darkgoldenrod; */
+            border-radius: 50%;
+        }
+        .cal-btn
+        {
+            background-color:gray;
+            color: white;
+        }
+        .result
+        {
+            width: 181px;
+            height: 50px;
+            margin: 3px;
+            padding: 2px;
+            border-radius: 70px;
+            box-shadow: none;
+            outline: none;
+            text-align: right;
+            background: #e41616;
+            color: aliceblue;
+        }
+        .equalbtn
+        {
+            background-color:rgb(190, 41, 41);
+            color: white;
+        }
+        /* #btn-clr{background-color: aqua;} */
+        #name{
+            color: brown;
+            text-align: center;
+            font-weight: bold;
+        }
+        #placeholder
+        {
+            border: none;
+            text-align: right;
+            float: right;
+            
+            /* background-color: transparent; */
+            background-color: black;
+            color: aliceblue;
+            font-size:40px;
+            
+        }
+        #btn-clr{
+            border: none;
+            background-color:rgb(190, 41, 41);
+
+            font-weight: bold;
+            border: 50%;
+            color: white;
+            
+            
+        }
+        .calculator
+        {
+            color: white;
+        }
+        input::placeholder
+         {
+    color: white;}
+    </style>
+</head>
+<body>
+    <div class="cal-body">
+    <!-- <p id="name"> simple calculator</p> -->
+    <div class="calculator" >
+        <!-- <input id="placeholder" type="text" class="result" placeholder ="0" > -->
+        <input id="placeholder" type="text" class="result" placeholder ="0" >
+        
+    </div>
+   
+    <div>
+    <button type="button" class="clear" id="btn-clr" style="background-color: rgb(210, 207, 207); color: black;" >C</button>
+    <button type="button" class="back"id="btn-clr" style="background-color: rgb(196, 195, 195);color: black;">del</button>
+    <button type="button" class="cal-btn"id="btn-clr" style="background-color: rgb(187, 183, 183);color: black;">%</button>
+    <button type="button" class="cal-btn"id="btn-clr">/</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >7 </button>
+        <button  type="button"class="cal-btn">8</button>
+        <button type="button" class="cal-btn">9</button>
+        <button  type="button"class="cal-btn"id="btn-clr">x</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >4 </button>
+        <button  type="button"class="cal-btn">5</button>
+        <button type="button" class="cal-btn">6</button>
+        <button  type="button"class="cal-btn"id="btn-clr">-</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >1</button>
+        <button  type="button"class="cal-btn">2</button>
+        <button type="button" class="cal-btn">3</button>
+        <button  type="button"class="cal-btn"id="btn-clr">+</button>
+    </div>
+
+    <div>
+        <!-- <button  type="button" class="cal-btn" >00</button> -->
+        <button  type="button"class="cal-btn" style="width: 110px; border-radius: 29px;">0</button>
+        <button type="button" class="cal-btn">.</button>
+        <button  type="button"class="equalbtn">=</button>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.cal-btn').on('click',function(){
+                $('.result').val($('.result').val()+$(this).html());
+            });
+            $('.equalbtn').on('click',function(){
+                exp=$('.result').val();
+                if(exp.includes('x'))
+                {
+                    exp=exp.replace('x','*')
+
+                }
+                $('.result').val(eval(exp));
+            });
+            $('.equalbtn').on('click',function(){
+                $('.result').val(eval( $('.result').val() ) );
+            });
+
+
+            $('.clear').on('click',function(){
+                $('.result').val('');
+            });
+
+            
+             $('.back').on('click', function(){
+        let vaibhav = $('.result').val();
+        $('.result').val(vaibhav.substring(0, vaibhav.length - 1));
+    });
+        });
+    </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div class="ajaxMessage"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        getData();
+    });
+    function getData()
+    {
+        $.ajax({
+            url:'sample.html', 
+            type :'GET' ,
+            // PUT POST DELETE  GET USED FOR READ DATA AND APPEND IT 
+            dataType:'text',
+            success:successFn,
+            error:errorFn,
+            complete:function(xhr , status)
+            {
+                console.log('result completed')
+            }
+
+        })
+        function successFn(result){
+            console.log('sucess');
+            $('.ajaxMessage').append(result);
+        }
+        function errorFn(xhr,status,str){
+            console.log(xhr);
+            console.log(status);
+            console.log(str);
+        }
+    }
+</script>
+</html>

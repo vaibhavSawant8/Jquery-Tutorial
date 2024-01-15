@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="testdiv">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+        </ul>
+        <span id="messagediv">hello world</span>
+    </div>
+</body>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('li').click(function(){
+            $(this).before('<p>list item added befor li</p>');
+            $(this).after('<p>list item added after li</p>');
+            $(this).insertAfter('#messagediv');
+        });
+    });
+</script>
+</html>

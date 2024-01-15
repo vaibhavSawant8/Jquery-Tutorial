@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            user-select: none;
+
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(203, 214, 214);
+        }
+        .inputbox{
+            position: relative;
+            width: 450px;
+        }
+            .inputbox h1
+            {
+                font-size: 30px;
+                color: rebeccapurple;
+            }
+            .inputbox input
+            {
+                position: relative;
+                width: 100%;
+                height: 60px;
+                border: 2px solid black;
+                margin: 15px 0px 20px;
+                background: transparent;
+                outline: none;
+                padding: 0px 20px;
+                font-size: 24px;
+                letter-spacing: 2px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                color: grey;
+                box-shadow: -4px -4px 10px rgb(255, 255, 1),
+                
+            }
+            input::placeholder
+            {
+                letter-spacing: 0px;
+            }
+            #btn{
+                position: relative;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 8px;
+                background-color: #333;
+            }
+            #btn:active
+            {
+                background-color: blue;
+            }
+            #btn:hover
+            {
+                /* background-color: #45a049; */
+                color: red;
+            }
+    </style>
+</head>
+<body>
+    <div class="inputbox">
+        <h1>genrate password using jquery</h1>
+        <input type="text"  placeholder="create password" id="password" readonly="">
+        <div id="btn">genrate password</div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+        $("#btn").click(function(){
+            var length="18";
+            var mix="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+            var uppercase="ASDFGHJKOIUFGYGUHINKJBK";
+            var numbers="134643234862234567";
+            var lowecase="sadjAhbcSBaCKJKBwertyyTRFGHCDuRDtjBHJdy";
+            var character=mix+numbers+uppercase+lowecase;
+            let password="";
+        
+        for (var i = 0; i < length; i++) {
+            var vaibhav = Math.floor(Math.random() * character.length); //Math.random() generates randomply charter using variable vaibhav
+            password += character[vaibhav];   
+        }
+        $("#password").val(password);
+    });
+});
+</script>
+</html>

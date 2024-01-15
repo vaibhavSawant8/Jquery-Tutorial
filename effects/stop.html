@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#asd").click(function(){
+                $("#mno").slideDown(3000);
+            });
+            $("#stop").click(function(){
+                $("#mno").stop();
+            });
+            $("#start").click(function(){
+                $("#mno").slideDown(100);
+            });
+        });
+
+    </script>
+    <style>
+        #asd,#mno{
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            background-color: aquamarine;
+            color: white;
+            border: 2px solid yellow;
+            border-radius: 3px;
+        }
+        #mno{
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="stop">stop sliding</button>
+    <button id="start">start sliding</button>
+    <p id="asd">click to slide down pannel</p>
+    <p id="mno">hello vaibhav</p>
+</body>
+</html>

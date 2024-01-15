@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                // alert("text:"+ $("#text").text());
+            });
+            $("#btn2").click(function(){
+                // alert("html:"+ $("#text").html());
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <p id="text">this is a some <b>bold</b> text</p>
+    <button id="btn1">show me</button>
+    <button id="btn2">show html</button>
+</body>
+</html>

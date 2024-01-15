@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="divone">i love my self</div>
+    <p id="test1">para1</p>
+    <p id="test2">this is <b>para2</b></p>
+    <p><input type="text" value="vaibhav" id="test3"></p>
+    <button id="btn1">set text</button>
+    <button id="btn2">set html</button>
+    <button id="btn3">set value</button>
+    
+    <!-- <button id="btn1">show text</button>
+    <button id="btn2">show html</button>
+    <button id="btn3">show value</button> -->
+</body>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+        //   alert(  $('#test1').text()); //calls test1 value inside the alert
+            $('#test1').text('vaibhav'), //this change the first p
+            $('#test1').after('after')
+            $('#test1').before('before')
+            $('#divone').remove('');
+
+           //this will add  text after  and before the text1
+            
+        });
+        $("#btn2").click(function(){
+            // alert($('#test2').html());
+            $('#test2').html('<h1>vaibhva sawant</h1>');
+        });
+        $("#btn3").click(function(){
+            // alert($('#test3').val());  
+            $('#test3').val('sawant vaibhav');  
+        });
+        
+    });
+</script>
+</html>

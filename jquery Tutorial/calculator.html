@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+       body
+       {
+        border: 3px solid black;
+        width: 18.5%;
+        padding: 10.2px;
+        margin-left: 520px;
+        margin-top: 120px;
+   }
+   .cal-body
+   {
+    background-color: rgb(248, 247, 249);
+   }
+        button
+        {
+            width: 40px;
+            height: 40px;
+            outline: none;
+            box-shadow: none;
+            margin: 2px;
+            font-size: 16px;
+            font-weight: bold;
+            color: blue;
+
+
+        }
+
+        .clear,.back{
+            background-color: darkgoldenrod;
+        }
+        .cal-btn
+        {
+            background-color: beige;
+        }
+        .result
+        {
+            width: 181px;
+            height: 30px;
+            margin: 3px;
+            padding: 2px;
+            border-radius: 2px;
+            box-shadow: none;
+            outline: none;
+            text-align: right;
+            background: #eee;
+        }
+        .equalbtn
+        {
+            background-color:darkorange;
+        }
+        #btn-clr{background-color: aqua;}
+        #name{
+            color: brown;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="cal-body">
+    <p id="name">calculator</p>
+    <div class="calculator">
+        <input type="text" class="result" placeholder="0">
+        
+    </div>
+   
+    <div>
+    <button type="button" class="clear" id="btn-clr">C</button>
+    <button type="button" class="back"id="btn-clr">del</button>
+    <button type="button" class="cal-btn"id="btn-clr">%</button>
+    <button type="button" class="cal-btn"id="btn-clr">/</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >7 </button>
+        <button  type="button"class="cal-btn">8</button>
+        <button type="button" class="cal-btn">9</button>
+        <button  type="button"class="cal-btn"id="btn-clr">x</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >4 </button>
+        <button  type="button"class="cal-btn">5</button>
+        <button type="button" class="cal-btn">6</button>
+        <button  type="button"class="cal-btn"id="btn-clr">-</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >1</button>
+        <button  type="button"class="cal-btn">2</button>
+        <button type="button" class="cal-btn">3</button>
+        <button  type="button"class="cal-btn"id="btn-clr">+</button>
+    </div>
+
+    <div>
+        <button  type="button" class="cal-btn" >00</button>
+        <button  type="button"class="cal-btn">0</button>
+        <button type="button" class="cal-btn">.</button>
+        <button  type="button"class="equalbtn">=</button>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.cal-btn').on('click',function(){
+                $('.result').val($('.result').val()+$(this).html());
+            });
+            $('.equalbtn').on('click',function(){
+                exp=$('.result').val();
+                if(exp.includes('x'))
+                {
+                    exp=exp.replace('x','*')
+
+                }
+                $('.result').val(eval(exp));
+            });
+            $('.equalbtn').on('click',function(){
+                $('.result').val(eval( $('.result').val() ) );
+            });
+
+
+            $('.clear').on('click',function(){
+                $('.result').val('');
+            });
+
+            
+             $('.back').on('click', function(){
+        let vaibhav = $('.result').val();
+        $('.result').val(vaibhav.substring(0, vaibhav.length - 1));
+    });
+        });
+    </script>
+</html>

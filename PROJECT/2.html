@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        
+        .main{
+            margin-left: 470px;
+            background-color: #1f1f21;
+            width: 30%;
+    
+        
+        }
+         #display{
+            width: 93%;
+            padding: 5px;
+            font-size: 55px;
+            color: black;
+            background-color: #fff;
+            text-align: right;
+            border: 1px solid black;
+            outline: none;
+        }
+        .clear{
+            background-color: red;
+            color: #fff;
+        }
+         input{
+            background-color: #333;
+            color: #fff;
+            margin-top: 5px;
+            font-size: 25px;
+            width: 95px;
+            height: 95px;
+            border-radius: 40px;
+            border-width: 0;
+        } 
+        .finalresult{
+            background-color: #001010;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator in jQuery</h1>
+    <div class="calculator">
+    <form name="myform">
+        <tr>
+            <td>
+                <input type="screen" id="screen" name="screen"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" name="7" value="7">
+                <input type="button" name="8" value="8">
+                <input type="button" name="9" value="9">
+                <input type="button" name="/" value="/">
+                <br>
+                <input type="button" name="4" value="4">
+                <input type="button" name="5" value="5">
+                <input type="button" name="6" value="6">
+                <input type="button" name="*" value="*">
+                <br>
+                <input type="button" name="1" value="1" id="one">
+                <input type="button" name="2" value="2">
+                <input type="button" name="3" value="3">
+                <input type="button" name="-" value="-">
+                <br>
+                <input type="button" name="C" value="C">
+                <input type="button" name="CE" value="CE">
+                <input type="button" name="0" value="0">
+                <input type="button" name="+" value="+">
+                <br>
+                <input type="button" name="=" value="=">
+    </form> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+<script> 
+    $(document).ready(function(){
+      $("#one").click(function(){
+        document . form . display.value +=1;
+      });
+    });
+</script>
+</body>
+</html>
